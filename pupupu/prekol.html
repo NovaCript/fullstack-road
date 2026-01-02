@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.red { background: #ff5f56; }
+.green { background: #27c93f; }
+.blue { background: #ffbd2e; }
+
+button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Анимация засасывания */
+.suck-in {
+  animation: suck 0.8s forwards ease-in;
+}
+
+@keyframes suck {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: scale(0) rotate(720deg); opacity: 0; }
+}
+
+/* Анимация падения сверху */
+.fall-down {
+  animation: fall 0.6s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fall {
+  0% { transform: translateY(-500px) scale(0); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="content">
+  <div class="block red"></div>
+  <div class="block green"></div>
+  <div class="block blue"></div>
+</div>
+
+<button onclick="startAnimation()">Засосать!</button>
+</body>
+</html>
+
+<script>
+    function startAnimation() {
+  const content = document.getElementById('content');
+  
+  // 1. Засасываем
+  content.classList.remove('fall-down');
+  content.classList.add('suck-in');
+  
+  // 2. Через 1 секунду возвращаем
+  setTimeout(() => {
+    content.classList.remove('suck-in');
+    content.classList.add('fall-down');
+  }, 1000);
+}
+
+</script>
