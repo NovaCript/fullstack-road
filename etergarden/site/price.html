@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/logo/logo1.png"
+    />
+    <script src="./scripts/scripts.js"></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Вечный сад</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="gold-radial-bg"></div>
+    <header
+      id="start-pages"
+      class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+    >
+      <p class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
+        <button
+          id="theme-toggle-btn"
+          class="nav-link px-4"
+          onclick="toggleTheme()"
+        >
+          🌙
+        </button>
+        <img
+          class="logo-header"
+          src="./assets/logo/logo1.png"
+          alt="Золотое дерево"
+        />
+        <span class="fs-4">Вечный сад</span>
+      </p>
+      <ul class="nav nav-pills px-4 fw-bold">
+        <li class="nav-item">
+          <a
+            href="./index.html"
+            class="nav-link active link-warning bg-warning-subtle custom-hover-white"
+            aria-current="page"
+            >Главная</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="./index.html#carouselExample"
+            class="nav-link link-warning custom-hover-white"
+            >Галерея</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link link-warning custom-hover-white">Цены</a>
+        </li>
+        <li class="nav-item">
+          <a href="./index.html#about-info" class="nav-link link-warning custom-hover-white"
+            >О нас</a
+          >
+        </li>
+      </ul>
+    </header>
+        <div class="price__block m-5 d-flex align-items-center justify-content-center">
+          <table class="price_table">
+            <thead>
+              <tr>
+                <th class="work__table">Вид работ</th>
+                <th class="work__table">Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <th class="part" colspan="2">Средняя стоимость комплекса работ</th>
+              <tr>
+                <th>Одно захоронение, поправить памятник, плитка вокруг 20 шт</th>
+                <th>13.000р</th>
+              </tr>
+              <tr>
+                <th>Одно захоронение, поправить памятник, плитка вокруг 20 шт, фундамент</th>
+                <th>26.200р</th>
+              </tr>
+              <tr>
+                <th>Два захоронения, поправить памятник, плитка вся территория 49 шт</th>
+                <th>29.150р</th>
+              </tr>
+              <tr>
+                <th>Два захоронения, поправить памятник, плитка вся территория 49 шт, фундамент</th>
+                <th>53.350р</th>
+              </tr>
+                <th class="part" colspan="2">Демонтаж/Установка Памятника</th>
+              <tr>
+                <th>Гранит высотой 100см, толщина до 10 см</th>
+                <th>от 6.000р</th>
+              </tr>
+              <tr>
+                <th>Гранит высотой 110см, толщина до 10 см</th>
+                <th>от 7.000р</th>
+              </tr>
+              <tr>
+                <th>Гранит высотой 120см, толщина до 10 см</th>
+                <th>от 8.000р</th>
+              </tr>
+              <tr>
+                <th>Гранит высотой 130см, толщина до 10 см</th>
+                <th>от 9.000р</th>
+              </tr>
+              <tr>
+                <th>Гранит высотой 140см, толщина до 10 см</th>
+                <th>после осмотра</th>
+              </tr>
+              <th class="part" colspan="2">Изготовление Памятника</th>
+              <tr>
+                <th>Стандарт 100см, односторонняя полировка</th>
+                <th>от 39.000р</th>
+              </tr>
+              <tr>
+                <th>Индивидуальный заказ: форма, высота, надписи и прочее</th>
+                <th>по подсчету</th>
+              </tr>
+              <th class="part" colspan="2">Фундамент</th>
+              <tr>
+                <th>Устройство монолитной плиты толщина 10 см за 1 м2</th>
+                <th>5.000р</th>
+              </tr>
+              <tr>
+                <th>Устройство монолитной плиты толщина 10 см на одно захоронение</th>
+                <th>13.200р</th>
+              </tr>
+              <tr>
+                <th>Устройство монолитной плиты толщина 10 см на два захоронения</th>
+                <th>24.200р</th>
+              </tr>
+              <th class="part" colspan="2">Плитка, бордюр</th>
+              <tr>
+                <th>Укладка гранитной плитки 1 шт</th>
+                <th>от 3.000р</th>
+              </tr>
+              <tr>
+                <th>Укладка бетонной плитки 1 шт</th>
+                <th>350р</th>
+              </tr>
+              <tr>
+                <th>Установка бордюра 50см 1 шт</th>
+                <th>500р</th>
+              </tr>
+              <th class="part" colspan="2">Ограда</th>
+              <tr>
+                <th>Ограда на два захоронения 2.2 * 2.2 м</th>
+                <th>20.000р</th>
+              </tr>
+              <tr>
+                <th>Покраска молотковой/глянцевой/матовой краской</th>
+                <th>от 5.000р</th>
+              </tr>
+              <th class="part" colspan="2">Гранитные комплексы (Индивидуально, точная стоимость после подсчета)</th>
+              <tr>
+                <th>Одно захоронение без учета памятника</th>
+                <th>от 90.000р</th>
+              </tr>
+              <tr>
+                <th>Два захоронения без учета памятника</th>
+                <th>от 150.000р</th>
+              </tr>
+            </tbody>
+            </thead>
+          </table>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+
+</html>
