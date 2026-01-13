@@ -1,6 +1,6 @@
 function tipCalculator(person, total, tip) {
   let totalSum = total + (total * tip / 100);
-  let costForPerson = totalSum / person;
+  let costForPerson = (totalSum / person).toFixed(2);
   console.log(`
     -----------------------------------------
         Счет на сумму ${totalSum} руб
