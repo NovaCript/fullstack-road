@@ -1,13 +1,25 @@
 function tipCalculator(person, total, tip) {
-  if (isNaN(person) || isNaN(total) || isNaN(tip)) {
+  const p = Number(person);
+  const t = Number(total);
+  const percent = Number(tip);
+
+  if (
+    isNaN(p)
+    || isNaN(t)
+    || isNaN(percent)
+    || p <= 0
+    || percent < 0
+    || t < 0  
+      ) {
     return errorTypeTipCalculator(person, total, tip);
   }
-  let totalSum = total + (total * tip) / 100;
-  let costForPerson = (totalSum / person).toFixed(2);
+
+  let totalSum = (t + (t * percent) / 100).toFixed(2);
+  let costForPerson = (totalSum / p).toFixed(2);
   console.log(`
     -----------------------------------------
         Счет на сумму ${totalSum} руб
-        Чаевые: ${tip}%
+        Чаевые: ${percent}%
         С каждого человека по ${costForPerson} руб
     -----------------------------------------    
         `);
@@ -16,10 +28,10 @@ function tipCalculator(person, total, tip) {
 function errorTypeTipCalculator(person, total, tip) {
   console.log(`
         Ошибка типов.
-            Ожидается получение числовых значений, полуено:
-            Колличество человек: ${person}
-            Общая сумма счета: ${total}
-            Процент чаевых: ${tip}`);
+            Ожидается получение положительных числовых значений, полуено:
+            Колличество человек: ${person}, (тип: ${typeof person})
+            Общая сумма счета: ${total}, (тип: ${typeof total})
+            Процент чаевых: ${tip}, (тип: ${typeof tip})`);
 }
 
 function testCaseTip() {
@@ -34,6 +46,8 @@ function testCaseTip() {
     tipCalculator(4, 1000, 10); // +
     console.log(`--4-----------------------------------------------------------------------`);
     tipCalculator(`iyrtyr`, `trtyuu`, `asda`); // error
+    console.log(`--5-----------------------------------------------------------------------`);
+    tipCalculator(`iyrtyr`, -10, `asda`); // error
 }
 
 

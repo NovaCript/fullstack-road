@@ -1,0 +1,20 @@
+<div>
+  <input type="text" id="myInput" value="Этот текст нельзя менять" readonly>
+  <button id="editBtn" onclick="toggleEdit()">Изменить</button>
+</div>
+
+<script>
+  function toggleEdit() {
+    const input = document.getElementById('myInput');
+    const btn = document.getElementById('editBtn');
+    
+    if (input.hasAttribute('readonly')) {
+      input.removeAttribute('readonly'); // Разрешаем редактирование
+      input.focus();                     // Ставим курсор
+      btn.innerText = 'Сохранить';       // Меняем текст кнопки
+    } else {
+      input.setAttribute('readonly', true); // Запрещаем редактирование
+      btn.innerText = 'Изменить';
+    }
+  }
+</script>
