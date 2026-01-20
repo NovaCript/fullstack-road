@@ -14,12 +14,13 @@ function tipCalculator(person, total, tip) {
     return errorTypeTipCalculator(person, total, tip);
   }
 
-  let totalSum = (t + (t * percent) / 100).toFixed(2);
+  let tips = (t * percent) / 100;
+  let totalSum = (t + tips).toFixed(2);
   let costForPerson = (totalSum / p).toFixed(2);
   console.log(`
     -----------------------------------------
         Счет на сумму ${totalSum} руб
-        Чаевые: ${percent}%
+        Чаевые: ${tips}
         С каждого человека по ${costForPerson} руб
     -----------------------------------------    
         `);
