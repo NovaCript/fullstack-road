@@ -7,22 +7,28 @@ const totalAmountSpan = document.getElementById("totalAmount");
 const tipAmountSpan = document.getElementById("tipAmount");
 const amountPerPersonSpan = document.getElementById("amountPerPerson");
 
+const inputError = document.getElementById("inputError");
+
+const errorTypeInput = `
+Заполните все данные в ячейках
+`
+const inputAccepted = `
+Готово
+`
+
 function billCalculator(billAmount, tipPercentage, numberOfPeople) {
   const bill = billAmount.valueAsNumber;
   const tipPercent = tipPercentage.valueAsNumber;
   const people = numberOfPeople.valueAsNumber;
 
   if (checkerType(bill, tipPercent, people)) {
-    alert(`
-        Заполните все данные в ячейках.
-        Должен быть хотя бы очин человек.
-        `);
-    return;
+    return inputError.textContent = errorTypeInput;
   }
   const tip = tipCalculate(bill, tipPercent);
   const total = totalSum(bill, tip);
   const perPerson = costForPerson(total, people);
 
+  inputError.textContent = inputAccepted;
   tipAmountSpan.textContent = tip.toFixed(2);
   totalAmountSpan.textContent = total.toFixed(2);
   amountPerPersonSpan.textContent = perPerson;
