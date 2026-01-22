@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>IDE</title>
+    </head>
+    <body>
+        <div class="ide-container">
+            <div class="file">
+                <div class="logo"><img class="logo"
+                        src="./resource/code-slash.svg" alt="logo"></div>
+                <div class="nav">File</div>
+                <div class="nav">Edit</div>
+                <div class="nav">Selection</div>
+                <div class="nav">View</div>
+                <div class="nav">Go</div>
+                <div class="nav">Run</div>
+                <div class="nav">Terminal</div>
+                <div class="nav">Help</div>
+                <div class="close-button">X</div>
+            </div>
+
+
+            <div class="activity-bar">
+                <div class="bar"><img src="./resource/file-earmark-code.svg"
+                        title="Explorer" alt="Explorer"></div>
+                <div class="bar"><img src="./resource/search.svg" title="Search"
+                        alt="Search"></div>
+                <div class="bar"><img src="./resource/git.svg"
+                        title="Source control" alt="Source control"></div>
+                <div class="bar"><img src="./resource/play-fill.svg"
+                        title="Run and Debug" alt="Run and Debug"></div>
+                <div class="bar"><img src="./resource/boxes.svg"
+                        title="Extensions" alt="Extensions"></div>
+                <div class="settings-bar"><img src="./resource/gear.svg"
+                        title="Settings" alt="Settings"></div>
+            </div>
+            <!-- Боковая панель (файлы) -->
+            <div class="sidebar">
+
+                <details open>
+                    <summary>FULLSTACK-ROAD</summary>
+                    <ul>
+                        <li>009-css-colors-006-css-practice</li>
+                        <li>020-position</li>
+                        <details open>
+                            <summary>036-project</summary>
+                            <ul>
+                                <details open>
+                                    <summary>resource</summary>
+                                    <ul>
+                                        <li>boxes.svg</li>
+                                        <li>file-earmark-code.svg</li>
+                                        <li>gear.svg</li>
+                                        <li>git.svg</li>
+                                        <li>logo.svg</li>
+                                    </ul>
+                                </details>
+                                <li>README.md</li>
+                                <li>index.html</li>
+                                <li class="style-css">style.css</li>
+                            </ul>
+                        </details>
+                    </ul>
+                </details>
+                <div class="decoration">
+                <details><summary>OUTLINE</summary></details>
+                <details><summary>TIMELINE</summary></details>
+                </div>
+            </div>
+
+            <!-- Основная область -->
+            <div class="main-area">
+              <div class="tabs-bar">
+                <div class="editor-tabs">style.css U</div>
+                <div class="empty-bar"><span class ="dots">...</span></div>
+              </div>
+                <div class="code-editor">
+                    <pre>
+                        <code>
+html {
+  font-family: monospace;
+  min-width: 580px;
+  min-height: 440px;
+}
+
+.ide-container {
+  display: grid;
+  grid-template-areas:
+    "file file file"
+    "activity sidebar main"
+    "status status status";
+  grid-template-columns: 50px 400px 1fr;
+  grid-template-rows: 30px 1fr 30px;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.file {
+    display: grid;
+    grid-template-columns: repeat(9, auto) 1fr auto;
+    justify-content: start;
+    align-items: center;
+    grid-area: file;
+    background: #71C9CE;
+    padding: 0 5px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.nav {
+    background-color: #71C9CE;
+    border-radius: 5px;
+    height: 80%;
+    cursor: default;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 5px;
+}
+
+.nav:hover {
+    background-color: #1bb8c0;
+}
+
+.close-button {
+  grid-column: 11;
+  justify-self: end;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.close-button:hover {
+  background-color: red;
+  cursor: default;
+}
+
+.activity-bar {
+  display: grid;
+  grid-area: activity;
+  background: #A6E3E9;
+  grid-template-rows: repeat(5, auto) 1fr auto;
+  text-align: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+
+img {
+  height: 45px;
+  width: 45px;
+}
+
+.settings-bar {
+  grid-row: 7;
+}
+
+.sidebar {
+  display: grid;
+  grid-area: sidebar;
+  background: #CBF1F5;
+  border-right: 1px solid black;
+  font-size: 20px;
+  padding: 10px;
+  align-content: space-between;
+}
+
+summary:hover {
+  background-color: #71C9CE;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: #71C9CE;
+  cursor: pointer;
+}
+
+.main-area {
+  display: grid;
+  grid-template-areas:
+  "tabs"
+  "code";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-area: main;
+  background: #E3FDFD;
+  height: auto;
+  overflow: hidden;
+}
+
+.status-bar {
+  grid-area: status;
+  background: #71C9CE;
+  border-top: 1px solid black;
+  text-align: right;
+  font-size: 10px;
+  padding: 3px 10px;
+}
+
+.contact {
+  text-decoration: none;
+  color: black;
+}
+
+.style-css {
+  background-color: #71C9CE;
+  cursor: pointer;  
+}
+
+
+code {
+  font-size: 20px;
+  white-space: pre; 
+}
+
+.tabs-bar {
+  grid-area: tabs;
+  display: grid;
+  grid-template-areas: 
+  "active-tabs empty";
+  grid-template-columns: auto 1fr;
+}
+
+.editor-tabs {
+  grid-area: active-tabs;
+  justify-content: start;
+  font-size: 16px;
+  padding: 10px;
+  color: blue;
+  font-weight: 900;
+}
+
+.editor-tabs:hover {
+  cursor: pointer;
+}
+
+.empty-bar {
+  grid-area: empty;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  text-align: end;
+  padding: 10px;
+}
+
+.dots {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dots:hover {
+  background-color: #71C9CE;
+  border-radius: 10px;
+}
+
+.code-editor {
+  display: grid;
+  grid-area: code;
+  overflow: auto;
+  min-height: 0;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <!-- Статус-бар (снизу) -->
+            <div class="status-bar">
+                <span>
+                    <a class="contact" href="https://t.me/novacript">created by
+                        NovaCript</a></span>
+            </div>
+        </div>
+    </body>
+</html>

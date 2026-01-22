@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .calculator {
+            display: grid;
+            position: absolute;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5px;
+            border: 10px solid orange;
+            border-radius: 10px;
+            background-color: orange;
+            left: 50%;
+            top: 40px;
+            translate: -50%;
+            
+        }
+
+        .item {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 20px;
+            border-radius: 15px;
+            height: 60px;
+            width: 80px;
+            display: grid;
+            place-items: center;
+        }
+
+        .display {
+            grid-column: span 4;
+            background-color: rgb(48, 48, 48);
+            height: 60px;
+            color: white;
+            text-align: right;
+            padding: 10px 20px 0;
+            font-size: 40px;
+            font-family: monospace;
+        }
+
+
+
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">1337</div>
+        <div class="item">%</div>
+        <div class="item">CE</div>
+        <div class="item">C</div>
+        <div class="item">DEL</div>
+        <div class="item">DIV</div>
+        <div class="item">x</div>
+        <div class="item">,</div>
+        <div class="item">=</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">-</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">+</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">=</div>
+    </div>
+</body>
+</html>
