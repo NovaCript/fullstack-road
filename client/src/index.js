@@ -7,14 +7,17 @@ import "./index.css";
 // const root = document.getElementById("root");
 // root.appendChild(h1Element);
 
+const value = "Какое то значение";
+const items = ["Элемент 1", "Элемент 2", "Элемент 3",]
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
-    <h1>Какой то список:</h1>
+    <h1>{value}</h1>
     <ul>
-      <li>Lorem ipsum dolor sit amet.</li>
-      <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
-      <li>Lorem, ipsum dolor.</li>
+      <li>{items[0]}</li>
+      <li>{items[1]}</li>
+      <li>{items[2]}</li>
     </ul>
   </div>,
 );
