@@ -30,29 +30,31 @@ enum Week { Monday, Tuesday, Wednesday }
 
 public class Person
 {
-    private string name;
-    private int age;
+    private string _name;
+    private int _age;
 
     public Person(string name, int age)
     {
-        this.name = name;
-        this.age = age;
+        this._name = name;
+        this._age = age;
     }
 
     public string Name
     {
-        get => name;
-        set => name = value;
+        get => _name;
+        set => _name = value;
     }
 
-    public int Age { get => age;}
+    public int Age { get => _age;}
 
     public void SayHello()
     {
-        Console.WriteLine($"Hello my name is {name}, my age is {age}");
+        Console.WriteLine($"Hello my name is {_name}, my age is {_age}");
     }
 
 }
+
+
 public struct Point
 {
     public int X;
@@ -63,6 +65,6 @@ public struct Point
         X = x;
         Y = y;
     }
-    public void Display() => Console.WriteLine("$X: {X}, Y: {Y}");
+    public void Display() => Console.WriteLine($"X: {X}, Y: {Y}");
 
 }
