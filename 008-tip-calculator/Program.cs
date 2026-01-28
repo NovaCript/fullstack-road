@@ -1,14 +1,15 @@
 ﻿string exit = "";
-while (exit != "exit")
+
+while (exit.ToLower() != "exit")
 {
     Console.WriteLine($"--------------------------------------------------------------------");
     Console.WriteLine("Добро пожаловать!");
     Console.Write("Введите общую сумму счета: ");
-    decimal amount = GetValueStringToInt();
+    decimal amount = GetValueStringToDecimal();
     Console.Write("Введите процент чаевых (в процентах): ");
-    decimal percentTip = GetValueStringToInt();
+    decimal percentTip = GetValueStringToDecimal();
     Console.Write("Колличество человек в группе: ");
-    decimal personCount = GetValueStringToInt();
+    decimal personCount = GetValueStringToDecimal();
 
 
     decimal amountTip = AmountTip(amount, percentTip);
@@ -23,31 +24,32 @@ while (exit != "exit")
 
     Console.WriteLine($"Для завершения работы рограммы введите -> exit");
     exit = Console.ReadLine();
+}
 
-    static decimal AmountTip(decimal amount, decimal percentTip)
+
+decimal AmountTip(decimal amount, decimal percentTip)
+{
+    return (amount * percentTip) / 100m;
+}
+
+decimal TotalAmount(decimal amount, decimal amountTip)
+{
+    return amount + amountTip;
+}
+
+decimal AmountPerPerson(decimal totalAmount, decimal personCount)
+{
+    return totalAmount / personCount;
+}
+
+decimal GetValueStringToDecimal()
+{
+    decimal result;
+
+    while (!decimal.TryParse(Console.ReadLine(), out result) || result <= 0)
     {
-        return (amount * percentTip) / 100m;
+        Console.WriteLine("Ожидаем число больше 0");
     }
 
-    static decimal TotalAmount(decimal amount, decimal amountTip)
-    {
-        return amount + amountTip;
-    }
-
-    static decimal AmountPerPerson(decimal totalAmount, decimal personCount)
-    {
-        return totalAmount / personCount;
-    }
-
-    static decimal GetValueStringToInt()
-    {
-        decimal result;
-
-        while (!decimal.TryParse(Console.ReadLine(), out result) || result <= 0)
-        {
-            Console.WriteLine("Ожидаем число больше 0");
-        }
-
-        return result;
-    }
+    return result;
 }
