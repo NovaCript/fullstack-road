@@ -1,28 +1,29 @@
 ﻿string line = "============================================================";
 string continueLine = "Как будете готовы, нажмите Enter, чтобы продолжить...";
+string greet = "Приветствую на нашей СУПЕР ВИКТОРИНЕ!";
+string rules = "ДЛЯ КОРРЕКТНОГО ВВОДА ИСПОЛЬЗУЕТСЯ ТОЛЬКО ЛАТИНИЦА!";
+string call = "Испытайте себя в самом интеллектуальном шоу на планете!";
+string registration = "Для начала - РЕГИСТРАЦИЯ! Введите имя участника: ";
+string errorInputName = "Обязательно введи имя!";
+string successRegisterName = "ОТЛИЧНО! + 10 БАЛЛОВ! ТАК ДЕРЖАТЬ";
+string jokeMessage = "Если так пойдет и дальше, то у нас закончатся баллы!";
+string beginMessage = "И МЫ НАЧИНАЕМ!";
+
 
 Console.Clear();
-Console.WriteLine($"Приветствую на нашей СУПЕР ВИКТОРИНЕ!");
-Console.WriteLine($"{line}");
-Console.WriteLine($"ДЛЯ КОРРЕКТНОГО ВВОДА ИСПОЛЬЗУЕТСЯ ТОЛЬКО ЛАТИНИЦА!");
-Console.WriteLine($"Испытайте себя в самом интеллектуальном шоу на планете!");
-Console.WriteLine($"{line}");
-Console.Write($"Для начала - РЕГИСТРАЦИЯ! Введите имя участника: ");
+Console.WriteLine($"{greet}\n{line}\n{rules}\n{call}\n{line}\n{registration}");
 string nickname = Console.ReadLine();
 while (nickname == "")
 {
-    Console.WriteLine($"Обязательно введи имя!");
+    Console.WriteLine($"{errorInputName}");
     nickname = Console.ReadLine();
 }
 int score = 10;
-Console.WriteLine($"ОТЛИЧНО! + 10 БАЛЛОВ! ТАК ДЕРЖАТЬ {nickname.ToUpper()}! " +
-"Если так пойдет и дальше, то у нас закончатся баллы!");
-Console.WriteLine($"{line}");
-Console.WriteLine($"И МЫ НАЧИНАЕМ!");
-Console.Write(continueLine);
+Console.WriteLine($"{successRegisterName} {nickname.ToUpper()}! " + 
+$"{jokeMessage}\n{line}\n{beginMessage}\n{continueLine}");
 Console.ReadLine();
-Console.WriteLine($"{line}");
 
+Console.WriteLine($"{line}");
 Console.WriteLine($"Первый вопрос:");
 Console.WriteLine($"Зачем программисту резиновая уточка на столе?");
 Console.WriteLine($"A) Для красоты и уюта");
