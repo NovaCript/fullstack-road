@@ -1,7 +1,7 @@
 ﻿Random _rand = new Random();
 
 List<int> list = GenerateRandomList(5, 11, 25);
-Console.WriteLine($"{ConsoleWriteList(list)}");
+Console.WriteLine($"{ListToString(list)}");
 Console.WriteLine($"{GetSumElementGreater10(list)}");
 
 
@@ -16,7 +16,7 @@ List<int> GenerateRandomList(int minN, int maxN, int maxValue)
     return list;
 }
 
-string ConsoleWriteList(List<int> list)
+string ListToString(List<int> list)
 {
     return $"[{string.Join(", ", list)}]";
 }
