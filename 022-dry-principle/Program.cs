@@ -2,7 +2,7 @@
 
 List<int> list = GenerateRandomList(5, 11, 25);
 Console.WriteLine($"{ListToString(list)}");
-Console.WriteLine($"{GetSumElementGreater10(list)}");
+Console.WriteLine($"{GetSumElementTwoDigit(list)}");
 
 
 List<int> GenerateRandomList(int minN, int maxN, int maxValue)
@@ -21,17 +21,9 @@ string ListToString(List<int> list)
     return $"[{string.Join(", ", list)}]";
 }
 
-int GetSumElementGreater10(List<int> list)
+int GetSumElementTwoDigit(List<int> list)
 {
-    int result = 0;
-    foreach (var item in list)
-    {
-        if (IsTwoDigit(item))
-        {
-            result += item;
-        }
-    }
-    return result;
+    return list.Where(IsTwoDigit).Sum();
 }
 
 bool IsTwoDigit(int value)
