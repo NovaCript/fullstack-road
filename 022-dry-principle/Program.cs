@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 
 Random _rand = new Random();
@@ -34,3 +35,10 @@ bool IsTwoDigit(int value)
 List<int> list = GenerateRandomList(5, 11, 25);
 Console.WriteLine($"{ListToString(list)}");
 Console.WriteLine($"Sum: {GetSumElement(list, IsTwoDigit)}");
+
+StringBuilder sb = new StringBuilder();
+sb.Append(ListToString(list));
+sb.Append($"Sum: {GetSumElement(list, IsTwoDigit)}");
+
+
+File.WriteAllText("file.txt", sb.ToString());
