@@ -31,8 +31,9 @@ bool IsTwoDigit(int value)
     return value > 9 && value < 100;
 }
 
-
-List<int> list = GenerateRandomList(5, 11, 25);
+void Run()
+{
+ List<int> list = GenerateRandomList(5, 11, 25);
 Console.WriteLine($"{ListToString(list)}");
 Console.WriteLine($"Sum: {GetSumElement(list, IsTwoDigit)}");
 
@@ -41,4 +42,7 @@ sb.Append(ListToString(list));
 sb.Append($"Sum: {GetSumElement(list, IsTwoDigit)}");
 
 
-File.WriteAllText("file.txt", sb.ToString());
+File.WriteAllText("file.txt", sb.ToString());   
+}
+
+Run();
