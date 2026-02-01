@@ -1,8 +1,7 @@
-﻿Random _rand = new Random();
+﻿using System;
 
-List<int> list = GenerateRandomList(5, 11, 25);
-Console.WriteLine($"{ListToString(list)}");
-Console.WriteLine($"{GetSumElementTwoDigit(list)}");
+
+Random _rand = new Random();
 
 
 List<int> GenerateRandomList(int minN, int maxN, int maxValue)
@@ -21,12 +20,17 @@ string ListToString(List<int> list)
     return $"[{string.Join(", ", list)}]";
 }
 
-int GetSumElementTwoDigit(List<int> list)
+int GetSumElement(List<int> list, Func<int, bool> predicate)
 {
-    return list.Where(IsTwoDigit).Sum();
+    return list.Where(predicate).Sum();
 }
 
 bool IsTwoDigit(int value)
 {
     return value > 9 && value < 100;
 }
+
+
+List<int> list = GenerateRandomList(5, 11, 25);
+Console.WriteLine($"{ListToString(list)}");
+Console.WriteLine($"{GetSumElement(list, IsTwoDigit)}");
