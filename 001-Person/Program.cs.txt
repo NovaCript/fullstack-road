@@ -1,0 +1,38 @@
+﻿const int count = 10;
+int index = 0;
+
+string[] name = new string[count];
+int[] age = new int[count];
+
+void CreatePerson(string personName, int personAge)
+{
+    if (index >= count) return;
+    name[index] = personName;
+    age[index] = personAge;
+    index++;
+}
+
+(string personAge, int personName) GetPersonById(int id)
+{
+    if (id < 0 || id >= index) return ("empty", -1);
+    string personName = name[id];
+    int personAge = age[id];
+    return (personName, personAge);
+}
+
+void PrintPersonById(int id)
+{
+    if (id < 0 || id >= index) return;
+    Console.WriteLine($"Name: {name[id]}, Age: {age[id]}");
+}
+
+void PrintPerson((string, int) person)
+{
+    Console.WriteLine($"Name: {person.Item1}, Age: {person.Item2}");
+}
+
+for (int i = 0; i < count; i++)
+{
+    CreatePerson($"Name {i}", Random.Shared.Next(10, 80));
+    PrintPersonById(i);
+}

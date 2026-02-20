@@ -1,26 +1,11 @@
-// пользователи - имя возраст
-// добавить в базу
-// прочитать 
-// распечатать
-
-public class Person
+class Person
 {
-
-    public string Name { get; }
-    public int Age { get; }
-    public Person(string name, int age)
+    public Person(string personName, int personAge)
     {
-        Name = name;
-        Age = age;
+        Name = personName;
+        Age = personAge;
     }
 
-    public void Print()
-    {
-        Console.WriteLine($$"""
-        {
-          "name": "{{Name}}",
-          "age": {{Age}}
-        }
-    """);
-    }
+    public string Name { get; private set; }
+    public int Age { get; private set; }
 }
