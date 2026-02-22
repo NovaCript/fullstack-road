@@ -12,7 +12,7 @@ void CreatePerson(string personName, int personAge)
     index++;
 }
 
-(string personAge, int personName) GetPersonById(int id)
+(string personName, int personAge) GetPersonById(int id)
 {
     if (id < 0 || id >= index) return ("empty", -1);
     string personName = name[id];

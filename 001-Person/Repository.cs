@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 class Repository
 {
     private Person[] people;
@@ -8,6 +10,11 @@ class Repository
         this.count = count;
         people = new Person[count];
     }
+
+    // public int Index { get { return index; } }
+    // public int Index { get => index; }
+    public int Count => index;
+
     #region Практическая работа 13.4
     public void Append(Person person)
     {
@@ -23,12 +30,11 @@ class Repository
     }
     #endregion
 
-    public void Print()
+    public Person GetPersonById(int id)
     {
-        for (int i = 0; i < this.index; i++)
-        {
-            Person temp = people[i];
-            Console.WriteLine($"Name: {temp.Name} Age: {temp.Age}");
-        }
+        return (id < 0 || id >= index)
+        ? new Person("empty", -1)
+        : people[id];
     }
+
 }
