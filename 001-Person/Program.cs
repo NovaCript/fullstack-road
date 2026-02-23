@@ -1,4 +1,5 @@
 
+const string LINE = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 // Person person1 = new("Gleb I.", 31);
 // Person person1 = new Person("Gleb I.", 31);
 // Person person2 = new Person("Lena E.", 29);
@@ -43,6 +44,24 @@ Person res3 = repository.GetPersonById(10);
 Console.WriteLine($"{res2.Name}, {res2.Age}");
 Console.WriteLine($"{res3.Name}, {res3.Age}");
 
-Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+Console.WriteLine($"{LINE}");
 Printer printer = new Printer();
 printer.Print(repository);
+
+Console.WriteLine($"{LINE}");
+
+Repository newPeople = new Repository(10);
+printer.Print(newPeople);
+
+Person person10 = new Person("a", 10);
+Person person11 = new Person("b", 22);
+Person person12 = new Person("c", 43);
+
+Person[] arrayPerson = { person10, person11, person12 };
+newPeople.Append(arrayPerson);
+newPeople.Append(person10, person11, person12);
+
+
+printer.Print(newPeople);
+Console.WriteLine($"{LINE}");
+

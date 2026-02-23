@@ -1,11 +1,16 @@
 class Person
 {
-    public Person(string personName, int personAge)
+    public Person(string name, int age)
     {
-        Name = personName;
-        Age = personAge;
+        this.Name = name;
+        this.Age = age;
     }
 
     public string Name { get; private set; }
     public int Age { get; private set; }
+
+    override public string ToString()
+    {
+        return $"Name : {this.Name}, Age : {this.Age}";
+    }
 }
