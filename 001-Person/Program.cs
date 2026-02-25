@@ -45,7 +45,7 @@ const string LINE = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 // Console.WriteLine($"{res3.Name}, {res3.Age}");
 
 // Console.WriteLine($"{LINE}");
-// Printer printer = new Printer();
+Printer printer = new Printer();
 // printer.Print(repository);
 
 // Console.WriteLine($"{LINE}");
@@ -78,3 +78,8 @@ Console.WriteLine($"{LINE}");
 Teacher teacher = new Teacher("Nova", 33, "Informatics");
 Console.WriteLine(teacher.ToString());
 
+Console.WriteLine($"{LINE}");
+
+Repository repositoryPerson = new Repository(10);
+repositoryPerson.Append(student, employee, teacher);
+printer.Print(repositoryPerson);

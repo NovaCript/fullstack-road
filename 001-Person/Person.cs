@@ -1,4 +1,4 @@
-class Person
+abstract class Person
 {
     public Person(string name, int age)
     {

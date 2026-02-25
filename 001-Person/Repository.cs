@@ -34,7 +34,7 @@ class Repository
     public Person GetPersonById(int id)
     {
         return (id < 0 || id >= index)
-        ? new Person("empty", -1)
+        ? new NullPerson()
         : storage[id];
     }
 
