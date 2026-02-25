@@ -27,45 +27,54 @@ const string LINE = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 //     PrintPersonById(i);
 // }
 
-Repository repository = new Repository(10);
-for (int i = 0; i < 10; i++)
-{
-    repository.Append(new Person($"Человек{i}", Random.Shared.Next(10, 80)));
-}
+// Repository repository = new Repository(10);
+// for (int i = 0; i < 10; i++)
+// {
+//     repository.Append(new Person($"Человек{i}", Random.Shared.Next(10, 80)));
+// }
 
-Person res1 = repository.GetPersonById(5);
+// Person res1 = repository.GetPersonById(5);
 
-Console.WriteLine($"Name : {res1.Name},  Age : {res1.Age}");
+// Console.WriteLine($"Name : {res1.Name},  Age : {res1.Age}");
 
-Person res2 = repository.GetPersonById(-1);
-Person res3 = repository.GetPersonById(10);
+// Person res2 = repository.GetPersonById(-1);
+// Person res3 = repository.GetPersonById(10);
 
 
-Console.WriteLine($"{res2.Name}, {res2.Age}");
-Console.WriteLine($"{res3.Name}, {res3.Age}");
+// Console.WriteLine($"{res2.Name}, {res2.Age}");
+// Console.WriteLine($"{res3.Name}, {res3.Age}");
+
+// Console.WriteLine($"{LINE}");
+// Printer printer = new Printer();
+// printer.Print(repository);
+
+// Console.WriteLine($"{LINE}");
+
+// Repository newPeople = new Repository(10);
+// printer.Print(newPeople);
+
+// Person person10 = new Person("a", 10);
+// Person person11 = new Person("b", 22);
+// Person person12 = new Person("c", 43);
+
+// Person[] arrayPerson = { person10, person11, person12 };
+// newPeople.Append(arrayPerson);
+// newPeople.Append(person10, person11, person12);
+
+// printer.Print(newPeople);
+
+// Console.WriteLine($"{LINE}");
+
+Student student = new Student("Petya", 18, "School # 322");
+Console.WriteLine(student.ToString());
 
 Console.WriteLine($"{LINE}");
-Printer printer = new Printer();
-printer.Print(repository);
+
+Employee employee = new Employee("Test1", 77, 2000);
+Console.WriteLine(employee.ToString());
 
 Console.WriteLine($"{LINE}");
 
-Repository newPeople = new Repository(10);
-printer.Print(newPeople);
+Teacher teacher = new Teacher("Nova", 33, "Informatics");
+Console.WriteLine(teacher.ToString());
 
-Person person10 = new Person("a", 10);
-Person person11 = new Person("b", 22);
-Person person12 = new Person("c", 43);
-
-Person[] arrayPerson = { person10, person11, person12 };
-newPeople.Append(arrayPerson);
-newPeople.Append(person10, person11, person12);
-
-
-printer.Print(newPeople);
-Console.WriteLine($"{LINE}");
-
-
-Student s = new Student("Petya", 18, "School # 322");
-
-Console.WriteLine(s.ToString());
