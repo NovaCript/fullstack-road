@@ -65,3 +65,7 @@ newPeople.Append(person10, person11, person12);
 printer.Print(newPeople);
 Console.WriteLine($"{LINE}");
 
+
+Student s = new Student("Petya", 18, "School # 322");
+
+Console.WriteLine(s.ToString());

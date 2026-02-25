@@ -1,0 +1,16 @@
+class Student : Person
+{
+    public Student(string name, int age, string schoolName)
+    : base(name, age)
+    {
+        this.SchoolName = schoolName;
+    }
+
+    public string SchoolName { get; set; }
+
+    public override string ToString()
+    {
+        // return "New Logic";
+        return $"{base.ToString()}, SchoolName : {this.SchoolName}";
+    }
+}

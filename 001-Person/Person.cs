@@ -6,10 +6,10 @@ class Person
         this.Age = age;
     }
 
-    public string Name { get; private set; }
-    public int Age { get; private set; }
+    public string Name { get; protected set; }
+    public int Age { get; protected set; }
 
-    override public string ToString()
+    public override string ToString()
     {
         return $"Name : {this.Name}, Age : {this.Age}";
     }
