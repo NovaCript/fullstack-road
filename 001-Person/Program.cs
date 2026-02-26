@@ -80,6 +80,19 @@ Console.WriteLine(teacher.ToString());
 
 Console.WriteLine($"{LINE}");
 
-Repository repositoryPerson = new Repository(10);
-repositoryPerson.Append(student, employee, teacher);
-printer.Print(repositoryPerson);
+// Repository repositoryPerson = new Repository(10);
+// repositoryPerson.Append(student, employee, teacher);
+
+NewRepo newRepo = new NewRepo();
+newRepo.Append(student, employee, teacher);
+
+for (int i = 0; i < 1000; i++)
+{
+    newRepo.Append(new Employee(
+        $"сотрудник {i}",
+        Random.Shared.Next(20, 60),
+        Random.Shared.Next(20, 60) * 50
+         ));
+}
+
+printer.Print(newRepo);

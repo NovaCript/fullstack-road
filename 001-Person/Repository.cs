@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-class Repository
+class Repository : IRepository
 {
     private Person[] storage;
     private int count;
@@ -31,7 +31,7 @@ class Repository
         }
     }
 
-    public Person GetPersonById(int id)
+    public Person GetById(int id)
     {
         return (id < 0 || id >= index)
         ? new NullPerson()
